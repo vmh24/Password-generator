@@ -4,13 +4,17 @@ chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+,-./
 length=${#chars}
 
 while true; do
-    echo "Choose password lenght: "
-    read n
+    if [[ -z $1 ]]; then
+        read -p "Choose password lenght: " n
+    else
+        n=$1
+    fi
 
     if echo "$n" | grep -q "^[0-9]*$"; then
         break
     fi
-    echo "Invalid character" 
+    echo "Invalid character"
+    set -- ""
 done
 
 for (( i=1; i<=$n; i++ ))
