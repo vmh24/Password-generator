@@ -4,7 +4,7 @@ chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+,-./
 length=${#chars}
 
 while true; do
-    echo "Enter a number: "
+    echo "Choose password lenght: "
     read n
 
     if echo "$n" | grep -q "^[0-9]*$"; then
